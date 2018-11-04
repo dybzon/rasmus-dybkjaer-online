@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="48.629074mm"
+   height="47.319584mm"
+   viewBox="0 0 48.629074 47.319584"
+   version="1.1"
+   id="svg4589"
+   inkscape:version="0.92.3 (2405546, 2018-03-11)"
+   sodipodi:docname="rd-logo.svg">
+  <defs
+     id="defs4583" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="2"
+     inkscape:cx="54.603673"
+     inkscape:cy="36.792149"
+     inkscape:document-units="mm"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     inkscape:window-width="1920"
+     inkscape:window-height="1001"
+     inkscape:window-x="-9"
+     inkscape:window-y="-9"
+     inkscape:window-maximized="1" />
+  <metadata
+     id="metadata4586">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-50.866145,-59.404125)">
+    <path
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:46.20081711px;line-height:1.25;font-family:'Franklin Gothic Demi';-inkscape-font-specification:'Franklin Gothic Demi';letter-spacing:0px;word-spacing:0px;fill:#68a691;fill-opacity:1;stroke:none;stroke-width:0.72188777"
+       d="M 50.866145,59.404125 V 94.461416 H 81.888541 V 59.404125 Z m 3.098001,2.140955 h 13.53561 c 2.496529,0 4.496734,0.293 6.000668,0.879534 1.518967,0.571494 2.774614,1.631632 3.767211,3.180683 0.992595,1.54905 1.489313,3.271139 1.489313,5.166092 0,3.699674 -1.782638,6.354131 -5.346959,7.96334 l 5.684925,13.603303 H 71.131575 L 66.394395,80.13361 h -5.166092 v 12.204422 h -7.264157 z m 7.264157,5.481836 v 7.850166 h 4.421436 c 1.443775,0 2.489036,-0.09749 3.135725,-0.293004 0.661731,-0.210551 1.248246,-0.661596 1.759582,-1.353408 0.511339,-0.706847 0.767395,-1.511445 0.767395,-2.413804 0,-0.857242 -0.256056,-1.624383 -0.767395,-2.301153 -0.511336,-0.676769 -1.067575,-1.090358 -1.669147,-1.24075 -0.601573,-0.165433 -1.729447,-0.248047 -3.383773,-0.248047 z"
+       id="path5159"
+       inkscape:connector-curvature="0" />
+    <path
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:46.20081711px;line-height:1.25;font-family:'Franklin Gothic Demi';-inkscape-font-specification:'Franklin Gothic Demi';letter-spacing:0px;word-spacing:0px;fill:#694f5d;fill-opacity:1;stroke:none;stroke-width:0.72188777"
+       d="m 62.982717,68.09455 v 38.62916 H 99.495219 V 68.09455 Z m 18.074862,2.632914 c 0.29004,0.0053 0.56887,0.02388 0.83716,0.05633 2.14056,0.245734 4.34168,1.143106 6.60322,2.69131 2.25573,1.534329 4.05979,3.917743 5.41207,7.150468 1.7005,4.065185 1.92251,7.966379 0.66559,11.703676 -1.26272,3.723426 -4.0034,6.467195 -8.2212,8.231542 l -9.78132,4.09173 -11.882994,-28.407559 8.678544,-3.630269 c 3.09571,-1.294966 5.65866,-1.924116 7.68893,-1.887225 z m -1.81384,6.158799 c -0.96503,0.0094 -1.97312,0.233706 -3.0241,0.673343 l -2.80965,1.175123 7.46052,17.835602 2.74712,-1.149284 c 2.42802,-1.015658 3.8545,-2.671701 4.27933,-4.96869 0.41902,-2.31086 0.11816,-4.687392 -0.9033,-7.129279 -0.71967,-1.720419 -1.72453,-3.166849 -3.01377,-4.33927 -1.28117,-1.192102 -2.54311,-1.870684 -3.78582,-2.035535 -0.31213,-0.04468 -0.62865,-0.06514 -0.95033,-0.06201 z"
+       id="text5140"
+       inkscape:connector-curvature="0" />
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="layer4"
+     inkscape:label="Layer 2"
+     transform="translate(-50.866145,-59.404125)" />
+</svg>

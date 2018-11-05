@@ -2,7 +2,7 @@ import * as React from 'react';
 import { BarMenuItem } from './BarMenuItem';
 import rdlogo from '../../images/rd-logo.svg';
 import styled, { css } from 'styled-components';
-import { colors } from '../../utilities';
+import { colors, isMobileBrowser } from '../../utilities';
 
 export class BarMenu extends React.Component {
   state = { menuPosition: 'top' };
@@ -16,6 +16,16 @@ export class BarMenu extends React.Component {
   }
 
   render() {
+    // We'll use the square menu for mobile clients
+    if(isMobileBrowser()) {
+      return (
+        <MenuContainer menuPosition={this.state.menuPosition}>
+          <MenuItemContainer menuPosition={this.state.menuPosition}>
+            <BarMenuItem menuPosition={this.state.menuPosition} link="/" text="Menu" />
+          </MenuItemContainer>
+        </MenuContainer>);  
+    }
+
     return (
       <MenuContainer menuPosition={this.state.menuPosition}>
         <StyledImage src={rdlogo} menuPosition={this.state.menuPosition} />

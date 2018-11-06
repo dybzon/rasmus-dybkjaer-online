@@ -1,6 +1,6 @@
 import * as React from 'react';
 import styled from 'styled-components';
-import { colors } from '../../utilities';
+import { colors, isMobileBrowser } from '../../utilities';
 import { GridContainer } from '../GridContainer';
 import { SquareMenuItem } from './SquareMenuItem';
 import { ImageLink } from '../ImageLink';
@@ -48,14 +48,14 @@ export class SquareMenu extends React.Component {
               height={'100%'}
               width={'100%'} />
           </SquareMenuItem>
-          <SquareMenuItem menuPosition={this.state.menuPosition} link="/snake" borderColor={colors.mediumGreen}>
+          {isMobileBrowser && <SquareMenuItem menuPosition={this.state.menuPosition} link="/snake" borderColor={colors.mediumGreen}>
             <ImageLink 
               altText="Play snake"
               src={snake}
               height={'100%'}
               width={'100%'} />
-          </SquareMenuItem>
-        </GridContainer>
+          </SquareMenuItem>}
+      </GridContainer>
       </SquareMenuContainer>
     );
   }

@@ -9,10 +9,18 @@ export class BarMenu extends React.Component {
 
   componentDidMount() {
     document.addEventListener('keydown', this.handleKeydown);
+
+    window.addEventListener('ondeviceorientation', () => this.setState({ menuPosition: 'left' }));
+    window.addEventListener('onmozorientation', () => this.setState({ menuPosition: 'right' }));
+    window.addEventListener('ondevicemotion', () => this.setState({ menuPosition: 'bottom' }));
   }
 
   componentWillUnmount() {
     document.removeEventListener('keydown', this.handleKeydown);
+
+    window.removeEventListener('ondeviceorientation', () => this.setState({ menuPosition: 'left' }));
+    window.removeEventListener('onmozorientation', () => this.setState({ menuPosition: 'right' }));
+    window.removeEventListener('ondevicemotion', () => this.setState({ menuPosition: 'bottom' }));
   }
 
   render() {
@@ -34,7 +42,7 @@ export class BarMenu extends React.Component {
           <BarMenuItem menuPosition={this.state.menuPosition} link="/wishlist" text="Wishlist" />
           <BarMenuItem menuPosition={this.state.menuPosition} link="/socialmedia" text="Find me" />
           <BarMenuItem menuPosition={this.state.menuPosition} link="/coolstuff" text="Cool stuff!" />
-          <BarMenuItem menuPosition={this.state.menuPosition} link="/snake" text="Play snake" />
+          {isMobileBrowser && <BarMenuItem menuPosition={this.state.menuPosition} link="/snake" text="Play snake" />}
         </MenuItemContainer>
       </MenuContainer>);
   }

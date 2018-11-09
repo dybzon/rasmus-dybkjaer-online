@@ -48,7 +48,7 @@ export class SquareMenu extends React.Component {
               height={'100%'}
               width={'100%'} />
           </SquareMenuItem>
-          {isMobileBrowser && <SquareMenuItem menuPosition={this.state.menuPosition} link="/snake" borderColor={colors.mediumGreen}>
+          {isMobileBrowser() || <SquareMenuItem menuPosition={this.state.menuPosition} link="/snake" borderColor={colors.mediumGreen}>
             <ImageLink 
               altText="Play snake"
               src={snake}

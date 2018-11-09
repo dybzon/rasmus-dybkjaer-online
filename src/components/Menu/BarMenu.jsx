@@ -5,22 +5,30 @@ import styled, { css } from 'styled-components';
 import { colors, isMobileBrowser } from '../../utilities';
 
 export class BarMenu extends React.Component {
-  state = { menuPosition: 'top' };
+  state = { menuPosition: 'top', hue: 0 };
 
   componentDidMount() {
     document.addEventListener('keydown', this.handleKeydown);
 
-    window.addEventListener('ondeviceorientation', () => this.setState({ menuPosition: 'left' }));
-    window.addEventListener('onmozorientation', () => this.setState({ menuPosition: 'right' }));
-    window.addEventListener('ondevicemotion', () => this.setState({ menuPosition: 'bottom' }));
+    if (window.DeviceOrientationEvent) {
+      window.addEventListener('deviceorientation', this.handleDeviceMovement);
+    } else if (window.DeviceMotionEvent) {
+      window.addEventListener('devicemotion', this.handleDeviceMovement);
+    } else {
+      window.addEventListener('mozorientation', this.handleDeviceMovement);
+    }
   }
 
   componentWillUnmount() {
     document.removeEventListener('keydown', this.handleKeydown);
 
-    window.removeEventListener('ondeviceorientation', () => this.setState({ menuPosition: 'left' }));
-    window.removeEventListener('onmozorientation', () => this.setState({ menuPosition: 'right' }));
-    window.removeEventListener('ondevicemotion', () => this.setState({ menuPosition: 'bottom' }));
+    if (window.DeviceOrientationEvent) {
+      window.removeEventListener('deviceorientation', this.handleDeviceMovement);
+    } else if (window.DeviceMotionEvent) {
+      window.removeEventListener('devicemotion', this.handleDeviceMovement);
+    } else {
+      window.removeEventListener('mozorientation', this.handleDeviceMovement);
+    }
   }
 
   render() {
@@ -42,7 +50,7 @@ export class BarMenu extends React.Component {
           <BarMenuItem menuPosition={this.state.menuPosition} link="/wishlist" text="Wishlist" />
           <BarMenuItem menuPosition={this.state.menuPosition} link="/socialmedia" text="Find me" />
           <BarMenuItem menuPosition={this.state.menuPosition} link="/coolstuff" text="Cool stuff!" />
-          {isMobileBrowser && <BarMenuItem menuPosition={this.state.menuPosition} link="/snake" text="Play snake" />}
+          <BarMenuItem menuPosition={this.state.menuPosition} link="/snake" text="Play snake" />
         </MenuItemContainer>
       </MenuContainer>);
   }
@@ -65,6 +73,13 @@ export class BarMenu extends React.Component {
           this.setState({ menuPosition: 'top' });
           break;
       }
+    }
+  }
+
+  handleDeviceMovement = e => {
+    this.setState({ hue: (this.state.hue >= 360 ? 0 : this.state.hue + 1) });
+    if(this.state.hue > 10) {
+      document.querySelector('body').style.backgroundColor = `hsl(${this.state.hue}, 100%, 50%)`;
     }
   }
 }

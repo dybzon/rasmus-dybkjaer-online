@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import { Content, Menu } from './components';
+import { DeviceInfoProvider } from './providers';
 import { SocialMedia, Wishlist, Home, CoolStuff, SnakePage } from './routes';
 import Snake from 'react-snake-overlay';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
-
 
 class App extends Component {
   constructor(props) {
@@ -14,7 +14,7 @@ class App extends Component {
   render() {
     return (
       <Router>
-        <>
+        <DeviceInfoProvider>
           <Menu />
           <Content>
             <Route exact path="/" component={Home} />
@@ -24,7 +24,7 @@ class App extends Component {
             <Route path="/snake" render={props => <SnakePage playSnake={this.playSnake} />} />
           </Content>
           {this.state.playSnake && <Snake />}
-        </>
+        </DeviceInfoProvider>
       </Router>
     );
   }

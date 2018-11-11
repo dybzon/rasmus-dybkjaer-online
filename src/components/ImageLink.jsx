@@ -1,17 +1,21 @@
 import * as React from 'react';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import { colors } from '../utilities';
+import { DeviceContext } from '../providers';
 
 export class ImageLink extends React.Component {
   render() {
     return (
-    <StyledImageContainer onClick={this.handleImageClick} {...this.props}>
-      <StyledImageOverlay>
-        <StyledText>{this.props.altText}</StyledText>
-      </StyledImageOverlay>
-      <StyledImageHelper></StyledImageHelper>
-      <StyledImage src={this.props.src} />
-    </StyledImageContainer>);
+      <DeviceContext.Consumer>
+      {deviceInfo => (
+        <StyledImageContainer onClick={this.handleImageClick} {...this.props} isTouch={deviceInfo.isTouch}>
+          <StyledImageOverlay>
+            <StyledText>{this.props.altText}</StyledText>
+          </StyledImageOverlay>
+          <StyledImageHelper></StyledImageHelper>
+          <StyledImage src={this.props.src} />
+        </StyledImageContainer>)}
+      </DeviceContext.Consumer>);
   }
 
   handleImageClick = () => {
@@ -28,9 +32,11 @@ const StyledImageContainer = styled.div`
   ${props => props.width && `width: ${props.width}`}
   ${props => props.height && `height: ${props.height}`}
 
-  :hover > div {
-    opacity: 1;
-  }
+  /* We'll remove :hover effexts on touch devices */
+  ${props => !props.isTouch && css`
+    :hover > div {
+      opacity: 1;
+    }`}
 `;
 
 // A helper div to help the image stay centered inside its parent element

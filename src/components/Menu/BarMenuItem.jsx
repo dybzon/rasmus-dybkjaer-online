@@ -3,25 +3,32 @@ import styled, { css } from 'styled-components';
 import { colors } from '../../utilities';
 import { Link } from 'react-router-dom';
 import { withRouter } from 'react-router'
+import { DeviceContext } from '../../providers';
 
 export const BarMenuItemComponent = props => (
-  <StyledLink to={props.link}>
-    <StyledMenuItem {...props}>
-      <StyledText>
-        {props.text}
-      </StyledText>
-    </StyledMenuItem>
-  </StyledLink>);
+  <DeviceContext.Consumer>
+    {deviceInfo => (
+    <StyledLink to={props.link}>
+      <StyledMenuItem {...props} isTouch={deviceInfo.isTouch}>
+        <StyledText>
+          {props.text}
+        </StyledText>
+      </StyledMenuItem>
+    </StyledLink>
+    )}
+  </DeviceContext.Consumer>);
 
 const StyledMenuItem = styled.div`
   cursor: pointer;
   display: flex;
   height: 100%;
 
-  :hover {
-    color: ${colors.mediumGreen};
-    transition: color 0.3s;
-  }
+  /* We'll remove :hover effexts on touch devices */
+  ${props => !props.isTouch && css`
+    :hover {
+      color: ${colors.mediumGreen};
+      transition: color 0.3s;
+    }`}
 
   ${props => (props.menuPosition === 'left' || props.menuPosition === 'right') && css`min-height: 3rem;`}
   ${props => (props.menuPosition === 'top' || props.menuPosition === 'bottom') && css`min-width: 10rem;`}

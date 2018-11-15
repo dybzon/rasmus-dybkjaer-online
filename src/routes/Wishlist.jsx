@@ -15,6 +15,7 @@ const wishes = [
   { name: 'Løbevogn til baby. Må gerne være brugt.', category: 'Sport', price: 1200, salesLink: 'https://www.dba.dk/soeg/?soeg=l%C3%B8bevogn'},
   { name: 'Regnsæt (bukser+jakke) der er velegnet til at cykle i', category: 'Tøj', price: 800, salesLink: undefined},
   { name: 'Boksershorts i god kvalitet, str. M', category: 'Tøj', price: 200, salesLink: undefined},
+  { name: 'Pæn batteridreven dørklokke (1 afsender, 1 modtager). Helst i hvid.', category: 'Til hjemmet', price: 250, salesLink: 'https://www.greenline.dk/k/elartikler/ringeklokke-dorklokke/p/globe-tradlos-dorklokke'},
 ]
 
 export const Wishlist = props => 

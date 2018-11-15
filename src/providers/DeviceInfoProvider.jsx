@@ -7,6 +7,9 @@ export class DeviceInfoProvider extends React.Component {
     this.state = {
       lastTouchTime: new Date(),
       isTouch: false,
+      alpha: 0,
+      beta: 0,
+      gamma: 0,
     };
   }
 
@@ -14,10 +17,23 @@ export class DeviceInfoProvider extends React.Component {
   // on a touch device or a "mouse" device.
   // Some devices can be both (touch and mouse), and therefore the value must be
   // set dynamically based on what was used last.
-
   componentDidMount() {
+    // Catch info about whether the user uses touch or mouse for input
     document.addEventListener('touchstart', this.handleTouchStart);
     document.addEventListener('mousemove', this.handleMouseMove);
+
+    // Catch info about device orientation, if on an eligible device
+    if (window.DeviceOrientationEvent) {
+      window.addEventListener("deviceorientation", this.handleOrientation);
+    }
+  }
+
+  componentWillUnmount() {
+    document.removeEventListener('touchstart', this.handleTouchStart);
+    document.removeEventListener('mousemove', this.handleMouseMove);
+    if (window.DeviceOrientationEvent) {
+      window.removeEventListener("deviceorientation", this.handleOrientation);
+    }
   }
 
   render() {
@@ -41,5 +57,9 @@ export class DeviceInfoProvider extends React.Component {
     this.setState({
       isTouch: false,
     })
+  }
+
+  handleOrientation = ({ alpha, beta, gamma }) => {
+    this.setState({ alpha, beta, gamma });
   }
 }

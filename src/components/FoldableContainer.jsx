@@ -1,6 +1,7 @@
 import * as React from 'react';
 import styled, { css } from 'styled-components';
 import { colors } from '../utilities';
+import { DeviceContext } from '../providers';
 
 export class FoldableContainer extends React.Component {
   constructor(props) {
@@ -10,14 +11,17 @@ export class FoldableContainer extends React.Component {
 
   render() {
     return (
-      <Container {...this.state} {...this.props}>
-        <ContainerHeader {...this.state} {...this.props} onClick={this.handleClick}>
-          {this.props.header}
-        </ContainerHeader>
-        <ContainerContent {...this.state} maxHeight={this.props.maxContentHeight || 200}>
-          {this.props.children}
-        </ContainerContent>
-      </Container>
+      <DeviceContext.Consumer>
+        {deviceInfo => (
+        <Container {...this.state} {...this.props} isTouch={deviceInfo.isTouch}>
+          <ContainerHeader {...this.state} {...this.props} onClick={this.handleClick}>
+            {this.props.header}
+          </ContainerHeader>
+          <ContainerContent {...this.state} maxHeight={this.props.maxContentHeight || 200}>
+            {this.props.children}
+          </ContainerContent>
+        </Container>)}
+      </DeviceContext.Consumer>
     );
   }
 
@@ -36,7 +40,7 @@ const Container = styled.div`
 
   ${props => props.open && css`border-left: 1px solid ${(props.borderColor || colors.lightGreen)};`}
   :hover {
-    ${props => !props.open && css`border-left: 1px solid ${props.borderColor || colors.lightGreen};`}
+    ${props => !props.open && !props.isTouch && css`border-left: 1px solid ${props.borderColor || colors.lightGreen};`}
   }
 `;
 

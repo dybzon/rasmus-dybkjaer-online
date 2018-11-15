@@ -1,53 +1,44 @@
 import * as React from 'react';
 import { DeviceContext } from '../providers';
-import finger from '../images/rasmus_finger.png';
+import circles from '../images/circles-split.png';
+import { Panorama } from '../components';
+import styled from 'styled-components';
 
-// Add info about shortcuts and other custom stuff that can be triggered on this site
 export class CoolStuff extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      alpha: 0, beta: 0, gamma: 0,
-    };
-  }
-
-  componentDidMount() {
-    if (window.DeviceOrientationEvent) {
-      window.addEventListener("deviceorientation", this.handleOrientation);
-    }
-    const bodyStyle = document.querySelector('body').style;
-    bodyStyle.backgroundSize = 'cover';
-    bodyStyle.backgroundRepeat = 'no-repeat';
-  }
-
-  componentWillUnmount() {
-    if (window.DeviceOrientationEvent) {
-      window.removeEventListener("deviceorientation", this.handleOrientation);
+      alpha: 0,
     }
   }
 
   render() {
-    const { alpha, beta, gamma } = this.state;
-    return (<DeviceContext.Consumer>
-      {deviceInfo => (<>
-        <div>-- Under construction --</div>
-        <div>Alpha: {alpha}</div>
-        <div>Beta: {beta}</div>
-        <div>Gamma: {gamma}</div>
-        <div>DeviceInfo: {deviceInfo.isTouch ? 'touch' : 'no touch'}</div>
-      </>)}
+    return (
+    <DeviceContext.Consumer>
+      {deviceInfo => (
+        <Panorama 
+          alpha={deviceInfo.alpha !== null ? deviceInfo.alpha : this.state.alpha} // Use the device orientation if possible
+          imageSrc={circles} 
+          onClick={this.handleClick}>
+          <PanoramaButton top={500} left={2000}></PanoramaButton>
+          <PanoramaButton top={200} left={1000}></PanoramaButton>
+          <PanoramaButton top={20} left={400}></PanoramaButton>
+        </Panorama>
+        )}
     </DeviceContext.Consumer>);
   }
 
-  handleOrientation = ({ alpha, beta, gamma }) => {
-    this.setState({ alpha, beta, gamma })
-
-    // Do some random shizzle when looking up
-    if(beta > 150 || beta < -150) {
-      document.querySelector('body').style.backgroundImage = `url(${finger})`;
-    }
-    else {
-      document.querySelector('body').style.backgroundImage = 'none';      
-    }
-  }    
+  handleClick = () => {
+    this.setState({ alpha: this.state.alpha > 350 ? 0 : this.state.alpha + 10 });
+  }
 }
+
+const PanoramaButton = styled.div`
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  top: ${props => props.top}px;
+  left: ${props => props.left}px;
+  background-color: blue;
+  user-select: none;
+`;

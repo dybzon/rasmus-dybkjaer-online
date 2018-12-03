@@ -11,7 +11,7 @@ export const FullMenuItemComponent = props => (
   <DeviceContext.Consumer>
     {deviceInfo => (
       <StyledLink to={props.link}>
-        <ItemContainer borderColor={props.borderColor}>
+        <ItemContainer borderColor={props.borderColor} isTouch={deviceInfo.isTouch}>
           <MenuItemAnimation icon={props.icon} isTouch={deviceInfo.isTouch} />
           <ItemContent isTouch={deviceInfo.isTouch}>
             {props.text}
@@ -49,6 +49,9 @@ const ItemContent = styled.div`
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  color: white;
+  font-size: 3rem;
+  text-align: center;
 
   ${props => !props.isTouch && css`
     ${ItemContainer}:hover & {

@@ -38,10 +38,10 @@ export class Countdown extends React.Component {
         <Header1>Nedtælling til {event}</Header1>
         <Container>
           <InnerContainer height={'75%'}>
-            <CountdownItem color={colors.lightGreen} fontSize={70} content={daysToTarget} />
-            <CountdownItem color={colors.lightGreen} fontSize={70} content={hoursToTarget} />
-            <CountdownItem color={colors.lightGreen} fontSize={70} content={minutesToTarget} />
-            <CountdownItem color={colors.lightGreen} fontSize={70} content={secondsToTarget} />
+            <CountdownItem color={colors.mediumGreen} fontSize={'3rem'} content={daysToTarget} />
+            <CountdownItem color={colors.mediumGreen} fontSize={'3rem'} content={hoursToTarget} />
+            <CountdownItem color={colors.mediumGreen} fontSize={'3rem'} content={minutesToTarget} />
+            <CountdownItem color={colors.mediumGreen} fontSize={'3rem'} content={secondsToTarget} />
           </InnerContainer>
           <InnerContainer height={'25%'}>
             <CountdownItem content="dage" />
@@ -60,15 +60,16 @@ export class Countdown extends React.Component {
 }
 
 const Background = styled.div`
-  background: ${colors.lightRose};
+  background: ${colors.darkRose};
+  color: ${colors.mediumGreen};
 `;
 
 const Container = styled.div`
   height: 120px;
   width: 100%;
   display: flex;
-  margin: 0 -10px;
-  padding: 50px 0;
+  margin: 0;
+  padding: 3rem 0;
   justify-content: space-between;
   flex-direction: column;
 `;

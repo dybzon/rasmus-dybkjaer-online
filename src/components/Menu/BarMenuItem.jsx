@@ -1,6 +1,6 @@
 import * as React from 'react';
 import styled, { css } from 'styled-components';
-import { colors } from '../../utilities';
+import { colors, isMobileBrowser } from '../../utilities';
 import { Link } from 'react-router-dom';
 import { withRouter } from 'react-router'
 import { DeviceContext } from '../../providers';
@@ -41,6 +41,7 @@ const StyledMenuItem = styled.div`
 
 const StyledText = styled.div`
   margin: auto;
+  ${isMobileBrowser() && css`font-size: 2rem;`}
   ${props => !props.isTouch && css`
     ${StyledMenuItem}:hover & {
         display: none;

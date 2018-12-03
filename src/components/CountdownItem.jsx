@@ -17,7 +17,7 @@ const Container = styled.div`
   flex-grow: 1;
   position: relative;
   background: ${props => props.color};
-  margin: 0 10px;
+  margin: 0;
 `;
 
 const Content = styled.div`
@@ -25,5 +25,6 @@ const Content = styled.div`
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  font-size: ${props => props.fontSize || 24}px;
+  font-size: ${props => props.fontSize || '1rem'};
+  color: white;
 `;

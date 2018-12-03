@@ -68,7 +68,7 @@ export class GridContainer extends React.Component {
           gridRowEnd={rowStart+1}
           key={i}>
             {c} 
-          </GridItem>);
+        </GridItem>);
     });
 
     return gridItems;

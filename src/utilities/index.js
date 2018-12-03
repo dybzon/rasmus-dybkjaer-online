@@ -1,2 +1,2 @@
 export { colors } from './colors';
-export { isMobileBrowser } from './helpers';
+export { isMobileBrowser, isMobile } from './helpers';

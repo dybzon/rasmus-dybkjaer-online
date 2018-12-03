@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Content, Menu } from './components';
+import { Menu } from './components';
 import { DeviceInfoProvider } from './providers';
 import { SocialMedia, Wishlist, Home, CoolStuff, SnakePage } from './routes';
 import Snake from 'react-snake-overlay';
@@ -16,13 +16,11 @@ class App extends Component {
       <Router>
         <DeviceInfoProvider>
           <Menu />
-          <Content>
-            <Route exact path="/" component={Home} />
-            <Route exact path="/wishlist" component={Wishlist} />
-            <Route path="/socialmedia" component={SocialMedia} />
-            <Route path="/coolstuff" component={CoolStuff} />
-            <Route path="/snake" render={props => <SnakePage playSnake={this.playSnake} />} />
-          </Content>
+          <Route exact path="/" component={Home} />
+          <Route exact path="/wishlist" component={Wishlist} />
+          <Route path="/socialmedia" component={SocialMedia} />
+          <Route path="/coolstuff" component={CoolStuff} />
+          <Route path="/snake" render={props => <SnakePage playSnake={this.playSnake} />} />
           {this.state.playSnake && <Snake />}
         </DeviceInfoProvider>
       </Router>

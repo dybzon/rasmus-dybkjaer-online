@@ -3,6 +3,8 @@ import { BarMenuItem } from './BarMenuItem';
 import rdlogo from '../../images/rd-logo.svg';
 import styled, { css } from 'styled-components';
 import { colors, isMobileBrowser } from '../../utilities';
+import gift from '../../images/gift.svg';
+import snake from '../../images/snake-tooltip.svg';
 
 export class BarMenu extends React.Component {
   state = { menuPosition: 'top', hue: 0 };
@@ -30,11 +32,11 @@ export class BarMenu extends React.Component {
       <MenuContainer menuPosition={this.state.menuPosition}>
         <StyledImage src={rdlogo} menuPosition={this.state.menuPosition} />
         <MenuItemContainer menuPosition={this.state.menuPosition}>
-          <BarMenuItem menuPosition={this.state.menuPosition} link="/" text="rasmusdybkjaer" />
-          <BarMenuItem menuPosition={this.state.menuPosition} link="/wishlist" text="Wishlist" />
+          <BarMenuItem menuPosition={this.state.menuPosition} link="/" text="rasmusdybkjaer" icon={rdlogo} />
+          <BarMenuItem menuPosition={this.state.menuPosition} link="/wishlist" text="Wishlist" icon={gift} />
           <BarMenuItem menuPosition={this.state.menuPosition} link="/socialmedia" text="Find me" />
           <BarMenuItem menuPosition={this.state.menuPosition} link="/coolstuff" text="Cool stuff!" />
-          <BarMenuItem menuPosition={this.state.menuPosition} link="/snake" text="Play snake" />
+          <BarMenuItem menuPosition={this.state.menuPosition} link="/snake" text="Play snake" icon={snake} />
         </MenuItemContainer>
       </MenuContainer>);
   }
@@ -59,13 +61,6 @@ export class BarMenu extends React.Component {
       }
     }
   }
-
-  // handleDeviceMovement = e => {
-  //   this.setState({ hue: (this.state.hue >= 360 ? 0 : this.state.hue + 1) });
-  //   if(this.state.hue > 10) {
-  //     document.querySelector('body').style.backgroundColor = `hsl(${this.state.hue}, 100%, 50%)`;
-  //   }
-  // }
 }
 
 // Styled component for the logo
@@ -100,7 +95,6 @@ const MenuItemContainer = styled.div`
 
 // Styled component to hold the entire menu
 const MenuContainer = styled.div`
-  display: relative;
   background-color: ${colors.lightRose};
   z-index: 100;
   transition: all .5s ease-out;
@@ -111,8 +105,7 @@ const MenuContainer = styled.div`
     height: 4rem;`}
   ${props => props.menuPosition === 'top' && 
     css`position: sticky;
-    top: 0;
-    margin-bottom: 4px;`}
+    top: 0;`}
   ${props => props.menuPosition === 'bottom' && 
     css`position: fixed;
     top: calc(100vh - 4rem);

@@ -24,7 +24,7 @@ export class DeviceInfoProvider extends React.Component {
 
     // Catch info about device orientation, if on an eligible device
     if (window.DeviceOrientationEvent) {
-      window.addEventListener("deviceorientation", this.handleOrientation);
+      window.addEventListener('deviceorientation', this.handleOrientation);
     }
   }
 
@@ -32,7 +32,7 @@ export class DeviceInfoProvider extends React.Component {
     document.removeEventListener('touchstart', this.handleTouchStart);
     document.removeEventListener('mousemove', this.handleMouseMove);
     if (window.DeviceOrientationEvent) {
-      window.removeEventListener("deviceorientation", this.handleOrientation);
+      window.removeEventListener('deviceorientation', this.handleOrientation);
     }
   }
 

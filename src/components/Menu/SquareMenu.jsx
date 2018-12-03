@@ -27,28 +27,28 @@ export class SquareMenu extends React.Component {
     return (
       <SquareMenuContainer>
         <GridContainer gridColumnIntervals={gridColumnIntervals}>
-          <SquareMenuItem menuPosition={this.state.menuPosition} link="/wishlist">
+          <SquareMenuItem link="/wishlist">
             <ImageLink 
             altText="Wishlist"
             src={danishFlag}
             height={'100%'}
             width={'100%'} />
           </SquareMenuItem>
-          <SquareMenuItem menuPosition={this.state.menuPosition} link="/socialmedia">
+          <SquareMenuItem link="/socialmedia">
             <ImageLink 
               altText="Find me"
               src={socialMediaMashup}
               height={'100%'}
               width={'100%'} />
           </SquareMenuItem>
-          <SquareMenuItem menuPosition={this.state.menuPosition} link="/coolstuff" borderColor={colors.mediumGreen}>
+          <SquareMenuItem link="/coolstuff" borderColor={colors.mediumGreen}>
             <ImageLink 
               altText="Cool stuff'n'tricks"
               src={coolStuff}
               height={'100%'}
               width={'100%'} />
           </SquareMenuItem>
-          {isMobileBrowser() || <SquareMenuItem menuPosition={this.state.menuPosition} link="/snake" borderColor={colors.mediumGreen}>
+          {isMobileBrowser() || <SquareMenuItem link="/snake" borderColor={colors.mediumGreen}>
             <ImageLink 
               altText="Play snake"
               src={snake}

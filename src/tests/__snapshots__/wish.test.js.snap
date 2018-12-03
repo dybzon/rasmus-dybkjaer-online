@@ -1,0 +1,82 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test snapshot of wish with price, with link 1`] = `
+<div
+  className="sc-kAzzGY crjdma"
+  open={false}
+>
+  <div
+    className="sc-chPdSV kBKTEg"
+    onClick={[Function]}
+    open={false}
+  >
+    Grimme puder
+  </div>
+  <div
+    className="sc-kgoBCf kmIioY"
+    open={false}
+  >
+    <div
+      className="sc-kGXeez HSHAO"
+    >
+      Estimeret pris (DKK): 
+      500
+    </div>
+    <div
+      className="sc-kGXeez HSHAO"
+    >
+      <a
+        href="http://puder.dk"
+        target="blank"
+      >
+        Find den fx her...
+      </a>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Test snapshot of wish with price, without link 1`] = `
+<div
+  className="sc-kAzzGY crjdma"
+  open={false}
+>
+  <div
+    className="sc-chPdSV kBKTEg"
+    onClick={[Function]}
+    open={false}
+  >
+    Bits-sæt
+  </div>
+  <div
+    className="sc-kgoBCf kmIioY"
+    open={false}
+  >
+    <div
+      className="sc-kGXeez HSHAO"
+    >
+      Estimeret pris (DKK): 
+      70
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Test snapshot of wish without any price or link 1`] = `
+<div
+  className="sc-kAzzGY crjdma"
+  open={false}
+>
+  <div
+    className="sc-chPdSV kBKTEg"
+    onClick={[Function]}
+    open={false}
+  >
+    Sofabord
+  </div>
+  <div
+    className="sc-kgoBCf kmIioY"
+    open={false}
+  />
+</div>
+`;

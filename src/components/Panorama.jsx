@@ -6,7 +6,6 @@ export const Panorama = props => {
   return (
     <ImageContainer onClick={onClick}>
       <Image alpha={alpha} src={imageSrc} height={window.innerWidth / 3}>{children}</Image>
-      <Image alpha={alpha} src={imageSrc} height={window.innerWidth / 3}>{children}</Image>
     </ImageContainer>
   )  
 }

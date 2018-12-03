@@ -20,7 +20,7 @@ export class Wish extends React.Component {
   }
 
   renderSalesLink() {
-    return this.props.salesLink ? (<WishDetailsContainer><a href={this.props.salesLink} target='blank'>Find den her...</a></WishDetailsContainer>) : null;
+    return this.props.salesLink ? (<WishDetailsContainer><a href={this.props.salesLink} target='blank'>Find den fx her...</a></WishDetailsContainer>) : null;
   }
 }
 

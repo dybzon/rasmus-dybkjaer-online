@@ -41,7 +41,7 @@ export class GridContainer extends React.Component {
 
   render() {
     return (
-      <Container {...this.state}>
+      <Container {...this.state} gridGap={this.props.gridGap}>
         {this.GridItems}
       </Container>);
   }
@@ -83,9 +83,10 @@ export class GridContainer extends React.Component {
 
 const Container = styled.div`
   display: grid;
-  ${props => css`grid-template-columns: repeat(${props.gridColumnCount}, ${getGridItemWidth(props.gridColumnCount)});`} /* Consider changing column count through media query */
+  /* Consider changing column count through media query */
+  ${props => css`grid-template-columns: repeat(${props.gridColumnCount}, calc(${getGridItemWidth(props.gridColumnCount)} - ${props.gridGap || '0px'}));`}
   grid-template-rows: auto;
-  grid-gap: 10px;
+  grid-gap: ${props => props.gridGap};
   justify-content: center;`;
 
 function getGridItemWidth(gridColumnCount) {

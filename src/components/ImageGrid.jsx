@@ -12,7 +12,7 @@ const gridColumnIntervals = [
 
 export const ImageGrid = props => {
   return (
-    <GridContainer gridColumnIntervals={gridColumnIntervals} width={800}>
+    <GridContainer gridColumnIntervals={gridColumnIntervals} width={800} gridGap={'10px'}>
       {props.children}
     </GridContainer>
   );

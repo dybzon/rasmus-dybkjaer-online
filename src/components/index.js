@@ -5,3 +5,8 @@ export { Menu } from './Menu';
 export { FoldableContainer } from './FoldableContainer';
 export { Wish } from './Wish';
 export { Panorama } from './Panorama';
+export { Background } from './Background';
+export { DateBarChart } from './DateBarChart';
+export { Countdown } from './Countdown';
+export { Header1 } from './Header1';
+export { InnerContent } from './InnerContent';
